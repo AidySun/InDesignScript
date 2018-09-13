@@ -3,33 +3,33 @@
 initialize();
 
 function initialize() {
-	//  quick apply, actie scripts
-	app.menuActions.item('Quick Apply...').invoke();
-	var includeS = app.menuActions.item( 'Include Scripts (s:)');
-	if(!includeS.checked) {
-		includeS.invoke();
-	}
-	sendKey_Win("{ESC}");
+    //  quick apply, actie scripts
+    app.menuActions.item('Quick Apply...').invoke();
+    var includeS = app.menuActions.item( 'Include Scripts (s:)');
+    if(!includeS.checked) {
+        includeS.invoke();
+    }
+    sendKey_Win("{ESC}");
 
-	//sendKey_Win("^{ENTER}");
-	//sendKey_Win("^n");
+    //sendKey_Win("^{ENTER}");
+    //sendKey_Win("^n");
 }
 
-function sendKey_Win(key) {  
-	app.doScript('set WshShell = CreateObject("WScript.Shell")\
-		WshShell.SendKeys("' + key + '")', 
-		ScriptLanguage.VISUAL_BASIC);  
-}   
+function sendKey_Win(key) {
+    app.doScript('set WshShell = CreateObject("WScript.Shell")\
+        WshShell.SendKeys("' + key + '")',
+        ScriptLanguage.VISUAL_BASIC);
+}
 
 //////
 /*
 
 function attach() {
-	app.eventListeners.add("afterOpen", xActions);
+    app.eventListeners.add("afterOpen", xActions);
 }
 
 function xActions(e) {
-	app.applyWorkspace("TestWorkspace");
+    app.applyWorkspace("TestWorkspace");
 }
 
 
